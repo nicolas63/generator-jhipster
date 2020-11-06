@@ -108,13 +108,10 @@ describe('FieldTypes', () => {
             });
         });
         context('when passing an invalid argument', () => {
-            it('should fail', () => {
+            it('should not fail', () => {
                 expect(() => {
                     FieldTypes.getIsType('thing', () => {});
-                }).to.throw(
-                    "The passed database type must either be 'sql', 'mysql', 'mariadb', 'postgresql'," +
-                        " 'oracle', 'mssql', 'mongodb', 'couchbase', 'neo4j' or 'cassandra'"
-                );
+                }).not.to.throw();
             });
         });
         context("when passing 'no' as argument", () => {

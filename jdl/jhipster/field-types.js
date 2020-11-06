@@ -141,7 +141,7 @@ function hasValidation(type, validation, isAnEnum) {
     );
 }
 
-function getIsType(databaseType, callback) {
+function getIsType(databaseType) {
     if (!databaseType) {
         throw new Error('The passed type must not be nil.');
     }
@@ -161,15 +161,9 @@ function getIsType(databaseType, callback) {
         case CASSANDRA:
             isType = isCassandraType;
             break;
-        case NO:
+        default:
             isType = () => true;
             break;
-        default:
-            callback && callback();
-            throw new Error(
-                "The passed database type must either be 'sql', 'mysql', 'mariadb', 'postgresql'," +
-                    " 'oracle', 'mssql', 'mongodb', 'couchbase', 'neo4j' or 'cassandra'"
-            );
     }
     return isType;
 }
