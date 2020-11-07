@@ -20,7 +20,7 @@
 const _ = require('lodash');
 const { REQUIRED, UNIQUE, MAX, MAXBYTES, MAXLENGTH, MIN, MINBYTES, MINLENGTH, PATTERN } = require('./validations');
 const JDLEnum = require('../models/jdl-enum');
-const { MONGODB, MARIADB, COUCHBASE, NEO4J, CASSANDRA, MSSQL, MYSQL, NO, ORACLE, POSTGRESQL, SQL } = require('./database-types');
+const { MONGODB, MARIADB, COUCHBASE, NEO4J, CASSANDRA, MSSQL, MYSQL, ORACLE, POSTGRESQL, SQL } = require('./database-types');
 
 const CommonDBTypes = {
     STRING: 'String',
